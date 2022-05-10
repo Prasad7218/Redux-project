@@ -1,7 +1,8 @@
 import { createSlice } from '@reduxjs/toolkit'
 
 const initialState = {
-  amount:0,
+  name:"Prasad",
+  amount:10000,
 }
 
 export const balanceSlice = createSlice({
@@ -9,14 +10,18 @@ export const balanceSlice = createSlice({
   initialState,
   reducers: {
       checkBalance:(state,action)=>{
-          state.amount+=action.payload
-      }
+          state.name=action.payload
+      },
+
+      setBalance:(state,action)=>{
+          state.amount=action.payload
+      },
 
     
   },
 })
 
 // Action creators are generated for each case reducer function
-export const {checkBalance} = balanceSlice.actions
+export const {checkBalance,setBalance} = balanceSlice.actions
 
 export default balanceSlice.reducer
